@@ -143,10 +143,11 @@ class App extends Component {
 
         case 2:
           return _.map(pseudos, (item, i) => {
-            const w = 6;
+            const w = (i === 0) ? 10 : 2
             const h = 24;
+            const x = (i === 0) ? 2 : 0
             return {
-              x: Math.floor((i * 12 / 2) % 12),
+              x: x,
               y: Infinity,
               w: w,
               h: h,
@@ -158,10 +159,11 @@ class App extends Component {
 
         case 3:
           return _.map(pseudos, (item, i) => {
-            const w = 4;
-            const h = 24;
+            const w = (i === 0) ? 10 : 2
+            const h = (i === 0) ? 24 : 12;
+            const x = (i === 0) ? 2 : 0
             return {
-              x: Math.floor((i * 12 / 3) % 12),
+              x: x,
               y: Infinity,
               w: w,
               h: h,
@@ -173,10 +175,11 @@ class App extends Component {
 
         case 4:
           return _.map(pseudos, (item, i) => {
-            const w = 6;
-            const h = 12;
+            const w = (i === 0) ? 10 : 2
+            const h = (i === 0) ? 24 : 12;
+            const x = (i === 0) ? 2 : 0
             return {
-              x: Math.floor((i * 12 / 2) % 12),
+              x: x,
               y: Infinity,
               w: w,
               h: h,
@@ -210,20 +213,7 @@ class App extends Component {
               };
             }
           });
-
-        case 6:
-          return _.map(pseudos, (item, i) => {
-            return {
-              x: Math.floor((i * 12 / 3) % 12),
-              y: Infinity,
-              w: 4,
-              h: 12,
-              i: item,
-              channel: item,
-              draggableHandle: ".react-grid-dragHandleExample"
-            };
-          });
-
+          
         default:
           return _.map(pseudos, (item, i) => {
             const w = 6;
