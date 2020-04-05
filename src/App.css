@@ -5,13 +5,13 @@
 html {height: 100%;}
 
 body {
-  background-color: #5a3a93;/*#6441A4;*/
+  background-color: #000000;/*#6441A4;*/
   overflow-y: scroll;
   overflow-x: hidden;
   padding: 0;
   margin: 0;
-  background-image: url("./img/mtg-tournament-7.png");
-  background-position: bottom;
+  background-image: url("./img/mtg-tournament-web-header.png");
+  background-position: top;
   background-repeat: no-repeat;
   background-size: initial;
   background-attachment: fixed;
@@ -117,7 +117,7 @@ header:hover .streams{
   box-sizing: border-box;
 }
 .react-grid-item:not(.react-grid-placeholder) {
-  background: #6441A4 ;
+  background: rgb(37, 25, 58) ;
   /*border: 1px solid white;*/
 }
 .react-grid-item.resizing {
