@@ -26,7 +26,7 @@ export default class Welcome extends Component {
                     <p>
                         In MTG-Tournament.com you can watch tournaments with multi streams of <a href="https://twitch.tv/" target="_blank" rel="noopener noreferrer" style={{ fontSize: "1em" }}>twitch.tv</a>.
                     </p>
-                    <p>Simply add the channel ID in <i>"channel twitch"</i> input at the top of the page or in the url. <br /><i>(ex: <a href={`${window.location.origin}/ChannelFireball/yellowhat`}>mtg-tournament.com/ChannelFireball/yellowhat/other_channel_id</a>)</i></p>
+                    <p>Simply add the channel ID in <i>"channel twitch"</i> input at the top of the page or in the url. <br /><i>(ex: <a href={`${window.location.origin}/ChannelFireball/yellowhat`}>{window.location.origin}/ChannelFireball/yellowhat/other_channel_name</a>)</i></p>
                     <p style={{ textAlign: "center" }}>or</p>
                     <p>You can also connect your twitch account to watch live of followed channels.</p>
                     <p>
