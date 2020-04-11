@@ -13,7 +13,7 @@ export default class GridTwitch extends Component {
         super(props);
 
         this.state = {
-            isVideoWChat: true
+            isVideoWChat: false
         }
 
         this.handleVideoWChat = this.handleVideoWChat.bind(this);

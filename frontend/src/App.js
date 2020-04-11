@@ -108,8 +108,6 @@ class App extends Component {
   }
 
   generateLayout(pseudos) {
-    //const p = this.props;
-    // reset mode layout
     if (!this.props.person.isResetMode)
       return _.map(pseudos, (item, i) => {
         const w = 6;
@@ -125,110 +123,21 @@ class App extends Component {
         };
       });
     else
-      switch (pseudos.length) {
-        case 1:
-          return _.map(pseudos, (item, i) => {
-            const w = 12;
-            const h = 24;
-            return {
-              x: 12,
-              y: Infinity,
-              w: w,
-              h: h,
-              i: item,
-              channel: item,
-              draggableHandle: ".react-grid-dragHandleExample"
-            };
-          });
-
-        case 2:
-          return _.map(pseudos, (item, i) => {
-            const w = (i === 0) ? 10 : 2
-            const h = 24;
-            const x = (i === 0) ? 2 : 0
-            return {
-              x: x,
-              y: Infinity,
-              w: w,
-              h: h,
-              i: item,
-              channel: item,
-              draggableHandle: ".react-grid-dragHandleExample"
-            };
-          });
-
-        case 3:
-          return _.map(pseudos, (item, i) => {
-            const w = (i === 0) ? 10 : 2
-            const h = (i === 0) ? 24 : 12;
-            const x = (i === 0) ? 2 : 0
-            return {
-              x: x,
-              y: Infinity,
-              w: w,
-              h: h,
-              i: item,
-              channel: item,
-              draggableHandle: ".react-grid-dragHandleExample"
-            };
-          });
-
-        case 4:
-          return _.map(pseudos, (item, i) => {
-            const w = (i === 0) ? 10 : 2
-            const h = (i === 0) ? 24 : 12;
-            const x = (i === 0) ? 2 : 0
-            return {
-              x: x,
-              y: Infinity,
-              w: w,
-              h: h,
-              i: item,
-              channel: item,
-              draggableHandle: ".react-grid-dragHandleExample"
-            };
-          });
-
-        case 5:
-          return _.map(pseudos, (item, i) => {
-            if (i >= 2) {
-              return {
-                x: Math.floor((i * 12 / 3) % 12),
-                y: Infinity,
-                w: 4,
-                h: 12,
-                i: item,
-                channel: item,
-                draggableHandle: ".react-grid-dragHandleExample"
-              };
-            } else {
-              return {
-                x: Math.floor((i * 12 / 2) % 12),
-                y: 0,
-                w: 6,
-                h: 12,
-                i: item,
-                channel: item,
-                draggableHandle: ".react-grid-dragHandleExample"
-              };
-            }
-          });
-          
-        default:
-          return _.map(pseudos, (item, i) => {
-            const w = 6;
-            const h = 14;
-            return {
-              x: Math.floor((i * 12 / 2) % 12),
-              y: Infinity,
-              w: w,
-              h: h,
-              i: item,
-              channel: item,
-              draggableHandle: ".react-grid-dragHandleExample"
-            };
-          });
-      }
+      return _.map(pseudos, (item, i) => {
+        const w = (i === 0) ? 10 : 2
+        const h = (i === 0) ? 24 : 6;
+        const x = (i === 0) ? 2 : ((i < 6) ? 0 : Math.floor(((i - 5) * 12 / 6) % 12))
+        const y = (i === 0) ? 0 : Infinity
+        return {
+          x: x,
+          y: y,
+          w: w,
+          h: h,
+          i: item,
+          channel: item,
+          draggableHandle: ".react-grid-dragHandleExample"
+        };
+      });
   }
 
   onLayoutChange(layout, layouts) {
