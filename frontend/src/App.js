@@ -123,21 +123,40 @@ class App extends Component {
         };
       });
     else
-      return _.map(pseudos, (item, i) => {
-        const w = (i === 0) ? 10 : 2
-        const h = (i === 0) ? 24 : 6;
-        const x = (i === 0) ? 2 : ((i < 6) ? 0 : Math.floor(((i - 5) * 12 / 6) % 12))
-        const y = (i === 0) ? 0 : Infinity
-        return {
-          x: x,
-          y: y,
-          w: w,
-          h: h,
-          i: item,
-          channel: item,
-          draggableHandle: ".react-grid-dragHandleExample"
-        };
-      });
+      switch (pseudos.length) {
+        case 1:
+          //GridTwitch.setVideoChat(true);
+          return _.map(pseudos, (item, i) => {
+            const w = 12;
+            const h = 24;
+            return {
+              x: 12,
+              y: Infinity,
+              w: w,
+              h: h,
+              i: item,
+              channel: item,
+              draggableHandle: ".react-grid-dragHandleExample"
+            };
+          });
+
+        default:
+          return _.map(pseudos, (item, i) => {
+            const w = (i === 0) ? 10 : 2
+            const h = (i === 0) ? 24 : 6;
+            const x = (i === 0) ? 2 : ((i < 6) ? 0 : Math.floor(((i - 5) * 12 / 6) % 12))
+            const y = (i === 0) ? 0 : Infinity
+            return {
+              x: x,
+              y: y,
+              w: w,
+              h: h,
+              i: item,
+              channel: item,
+              draggableHandle: ".react-grid-dragHandleExample"
+            };
+          });
+      }
   }
 
   onLayoutChange(layout, layouts) {

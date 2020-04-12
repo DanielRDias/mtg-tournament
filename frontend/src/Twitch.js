@@ -52,10 +52,12 @@ class TwitchEmbedVideo extends PureComponent {
 
     static defaultProps = {
         targetID: 'twitch-embed',
+        autoplay: false,
+        muted: true,
         width: "100%",
         height: "100%",
         theme: 'dark',
-        layout: 'video-with-chat'
+        layout: 'video',
     };
 
     constructor(props) {

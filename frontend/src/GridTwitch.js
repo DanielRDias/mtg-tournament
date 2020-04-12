@@ -25,11 +25,23 @@ export default class GridTwitch extends Component {
         }));
     }
 
+    setVideoChat(isVideoWChat) {
+        this.setState(
+            {isVideoWChat: isVideoWChat}
+        );
+    }
+
     render() {
         return (
             <Fragment>
                 <div className="header-player" style={{marginTop: this.props.isEditMode?"5px":"0"}}>{this.props.isEditMode?this.props.l.channel:''}</div>
-                <Twitch style={{ height: "calc(100%)", width: "calc(100%)"}} channel={this.props.l.channel} targetID={`twitch-embed-${this.props.l.channel}`} layout={this.state.isVideoWChat?"video-with-chat":"video"}/>
+                <Twitch 
+                    style={{ height: "calc(100%)", width: "calc(100%)"}} 
+                    autoplay={false}
+                    muted={true}
+                    channel={this.props.l.channel} 
+                    targetID={`twitch-embed-${this.props.l.channel}`} 
+                    layout={this.state.isVideoWChat?"video-with-chat":"video"}/>
                 <div className="overlay" style={{width:'100%', height:'100%', position: "absolute", top:0, right:0, display: this.props.showOverlay?"block":"none"}}></div>
                 <button
                     className="remove"
