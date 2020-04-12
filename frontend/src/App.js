@@ -174,7 +174,7 @@ class App extends Component {
 
     // open menu if all close
     if (pseudos.length === 0) {
-      person.isEditMode = true;
+      person.isEditMode = false;
       person.isCollapse = false;
       if (person.isAuth) this.getFollowedStream();
     }
@@ -367,7 +367,7 @@ class App extends Component {
             }
           </ResponsiveReactGridLayout>
           :
-          <Welcome isAuth={isAuth} streams={streams} user={user} handleWindow={this.handleWindow} logout={this.logout} />
+          <Welcome isEditMode={isEditMode} isAuth={isAuth} streams={streams} user={user} handleWindow={this.handleWindow} logout={this.logout} />
         }
 
         <ReactTooltip id="status" place="right" border={true} className="extraClass" getContent={datumAsText => {

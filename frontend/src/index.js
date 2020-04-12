@@ -9,7 +9,7 @@ import { CookiesProvider } from 'react-cookie';
 import * as serviceWorker from './serviceWorker';
 
 class Person {
-    isEditMode = true;
+    isEditMode = false;
     isResetMode = true;
     isCollapse = false;
     isAuth;
